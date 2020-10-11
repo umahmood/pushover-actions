@@ -1,6 +1,9 @@
-name: 'python docker testing'
-description: 'GitHub Action'
-author: 'spookfish'
+name: 'pushover action'
+description: 'Action for sending pushover notifications via pushover.net'
+author: 'Usman Mahmood'
+branding:
+  icon: 'heart'
+  color: 'blue'
 inputs:
   status:
     description: 'The current status of the job'
