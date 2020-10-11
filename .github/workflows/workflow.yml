@@ -1,0 +1,16 @@
+name: pushover-actions
+on: push
+jobs:
+  pushover-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 
+      - name: pushover-actions
+        uses: spookfish/pushover-actions@master
+        env:
+          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_TOKEN }}
+          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
+        with:
+          status: ${{ job.status }}
+          title: 'Repo. Activity Notification'
+          message: 'Hello World!'

@@ -1,0 +1,26 @@
+name: 'python docker testing'
+description: 'GitHub Action'
+author: 'spookfish'
+inputs:
+  status:
+    description: 'The current status of the job'
+  message:
+    description: 'Message text'
+  title:
+    description: 'Message title'
+  url:
+    description: 'Supplementary URL to show with your message'
+  url_title:
+    description: 'title for your supplementary URL, otherwise just the URL is shown'
+  device:
+    description: 'Device name to send the message directly to, rather than all devices (multiple devices may be separated by a comma)'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --status=${{ inputs.status }}
+    - --message=${{ inputs.message }}
+    - --title=${{ inputs.title }}
+    - --url=${{ inputs.url }}
+    - --url_title=${{ inputs.url_title }}
+    - --device=${{ inputs.device }}
