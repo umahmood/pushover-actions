@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - name: pushover-actions
-        uses: umahmood/pushover-actions@master
+        uses: umahmood/pushover-actions@main
         env:
           PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_TOKEN }}
           PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
