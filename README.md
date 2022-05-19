@@ -47,6 +47,7 @@ You can pass the following flags into the action:
 | url | Supplementary URL to show with your message |
 | url_title | title for your supplementary URL |
 | device | Device name to send the message directly to |
+| priority | Notification priority (low-to-high: -2 to 1) |
 
 Example: 
 ```
@@ -58,6 +59,7 @@ Example:
         url: 'https://example.com'
         url_title: 'example'
         device: 'iphone' # or 'iphone,galaxy10'
+        priority: '1' # High priority
 ```
 
 ## Versioning

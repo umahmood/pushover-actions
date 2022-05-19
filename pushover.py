@@ -23,6 +23,9 @@ def main():
     parser.add_argument('--device',
                         type=str, 
                         help='Device name to send the message directly to')
+    parser.add_argument('--priority',
+                        type=str, 
+                        help='Notification priority (low-to-high: -2 to 1)')
     args = parser.parse_args()
     try:
         token   = os.environ['PUSHOVER_TOKEN']
@@ -42,6 +45,7 @@ def main():
             'url'       : args.url,
             'url_title' : args.url_title,
             'device'    : args.device,
+            'priority'  : args.priority,
         }
         response = requests.post('https://api.pushover.net/1/messages.json',
                                  headers=headers,
