@@ -48,6 +48,7 @@ You can pass the following flags into the action:
 | url_title | title for your supplementary URL |
 | device | Device name to send the message directly to |
 | priority | Notification priority (low-to-high: -2 to 1) |
+| sound | The name of a supported sound (https://pushover.net/api#sounds; custom sounds are supported) |
 
 Example: 
 ```
@@ -60,6 +61,7 @@ Example:
         url_title: 'example'
         device: 'iphone' # or 'iphone,galaxy10'
         priority: '1' # High priority
+        sound: 'cashregister'
 ```
 
 ## Versioning
