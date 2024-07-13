@@ -26,6 +26,9 @@ def main():
     parser.add_argument('--priority',
                         type=str, 
                         help='Notification priority (low-to-high: -2 to 1)')
+    parser.add_argument('--sound',
+                        type=str,
+                        help='The name of a supported sound (https://pushover.net/api#sounds; custom sounds are supported)')
     args = parser.parse_args()
     try:
         token   = os.environ['PUSHOVER_TOKEN']
@@ -46,6 +49,7 @@ def main():
             'url_title' : args.url_title,
             'device'    : args.device,
             'priority'  : args.priority,
+            'sound'     : args.sound,
         }
         response = requests.post('https://api.pushover.net/1/messages.json',
                                  headers=headers,

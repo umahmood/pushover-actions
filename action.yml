@@ -19,6 +19,8 @@ inputs:
     description: 'Device name to send the message directly to, rather than all devices (multiple devices may be separated by a comma)'
   priority:
     description: 'Notification priority (low-to-high: -2 to 1)'
+  sound:
+    description: 'The name of a supported sound (https://pushover.net/api#sounds; custom sounds are supported)'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -30,3 +32,4 @@ runs:
     - --url_title=${{ inputs.url_title }}
     - --device=${{ inputs.device }}
     - --priority=${{ inputs.priority }}
+    - --sound=${{ inputs.sound }}
